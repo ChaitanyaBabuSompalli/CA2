@@ -1,20 +1,38 @@
 #include <iostream>
-#include <stack>
+#include <queue>
+
 using namespace std;
-int main() {
-	stack <int> stack;
-	stack.push(21);
-	stack.push(22);
-	stack.push(23);
-	stack.push(24);
-	stack.push(25);
-	int num = 0;
-	stack.push(num);
-	stack.pop();
-	stack.pop();
-	stack.pop();
-	while (!stack.empty()) {
-		cout << stack.top() << " ";
-		stack.pop();
+
+// Print the queue.
+//modified
+void showq(queue<int> gq)
+{
+	queue<int> g = gq;
+	while (!g.empty()) {
+		cout << '\t' << g.front();
+		g.pop();
 	}
+	cout << '\n';
+}
+
+// Driver Code
+int main()
+{
+	queue<int> gquiz;
+	gquiz.push(10);
+	gquiz.push(20);
+	gquiz.push(30);
+
+	cout << "The queue gquiz is : ";
+	showq(gquiz);
+
+	cout << "\ngquiz.size() : " << gquiz.size();
+	cout << "\ngquiz.front() : " << gquiz.front();
+	cout << "\ngquiz.back() : " << gquiz.back();
+
+	cout << "\ngquiz.pop() : ";
+	gquiz.pop();
+	showq(gquiz);
+
+	return 0;
 }
